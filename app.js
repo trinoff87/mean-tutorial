@@ -35,6 +35,15 @@ app.controller('PostsCtrl', [
     $scope.incrementUpvotes = function(comment){
       comment.upvotes += 1;
     }
+    $scope.addComment = function(){
+      if($scope.body === ''){return;}
+      $scope.post.comments.push({
+        author:'user',
+        body:$scope.body,
+        upvotes:0
+      });
+      $scope.body = '';
+    }
   }
 ]);
 
