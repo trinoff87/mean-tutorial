@@ -31,6 +31,10 @@ app.controller('PostsCtrl', [
   'posts',
   function($scope, $stateParams, posts){
     $scope.post = posts.posts[$stateParams.id];
+
+    $scope.incrementUpvotes = function(comment){
+      comment.upvotes += 1;
+    }
   }
 ]);
 
